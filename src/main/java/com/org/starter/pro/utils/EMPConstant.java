@@ -12,7 +12,7 @@ public interface EMPConstant {
 //	public static final String DB_URL_PREFIX = "jdbc:oracle:thin:@";
 	public static final String DB_URL_PREFIX = "jdbc:mysql://";
 	public static final String DB_USER_NAME = "root";
-	public static final String DB_PASSWORD = "password";
+	public static final String DB_PASSWORD = "$M1l0veme";
 //	public static final String DB_DRIVER_CLASS_NAME = "oracle.jdbc.driver.OracleDriver";
 	public static final String DB_DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
 	public static final String DIALECT_KEY = "spring.jpa.properties.hibernate.dialect";
