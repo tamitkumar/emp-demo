@@ -10,7 +10,7 @@
 	<groupId>com.org.starter.pro</groupId>
 	<artifactId>employee-jpa-tutorial</artifactId>
 	<version>v1</version>
-
+	<packaging>war</packaging>
 	<properties>
 		<java.version>11</java.version>
 		<maven.compiler.source>11</maven.compiler.source>
