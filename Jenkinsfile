@@ -8,7 +8,7 @@ pipeline {
 	stages {
 		stage('Build') {
 			step {
-				sh 'mvn -B -DskipTests clean package'
+				sh 'mvn -gs  C:\Users\tamit\.m2\settings.xml -s C:\Users\tamit\.m2\settings.xml -B -DskipTests clean package'
 			}
 		}
 		stage('Test') {
