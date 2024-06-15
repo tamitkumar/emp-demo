@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.org.starter.pro</groupId>
 	<artifactId>employee-jpa-tutorial</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>v1</version>
 
 	<properties>
 		<java.version>11</java.version>
@@ -53,4 +53,22 @@
     		<version>2.6</version>
 		</dependency>
 	</dependencies>
+	
+	<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.2.0</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        <mainClass>com.org.starter.pro.EmployeeApplication</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 </project>
