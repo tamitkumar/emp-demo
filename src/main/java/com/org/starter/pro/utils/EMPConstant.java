@@ -5,7 +5,7 @@ public interface EMPConstant {
 	public static final String COLON = ":";
 	public static final String HYPHEN = "-";
 	
-	public static final String DB_HOST = "localhost";
+	public static final String DB_HOST = "192.168.1.2";
 	public static final String DB_PORT = "3306/";
 //	public static final String DB_NAME = "XE";
 	public static final String DB_NAME = "MYEMPLOYEE?serverTimezone=UTC";
