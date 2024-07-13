@@ -3,7 +3,6 @@ package com.org.starter.pro.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,25 +20,27 @@ import com.org.starter.pro.utils.EmployeeValidator;
 @RequestMapping("/employee/v1")
 public class EMPController {
 
-	@Autowired
-	private EmployeeValidator validator;
+	private final EmployeeValidator validator;
 	
-	@Autowired
-	private EMPService service;
+	private final EMPService service;
+	
+	public EMPController(EmployeeValidator validator, EMPService service) {
+		this.validator = validator;
+		this.service = service;
+	}
 	
 	@PostMapping(value ="/saveAndUpdate")
 	public List<String> saveEmployeeAndAddress(@RequestBody EmployeeTO eto, BindingResult result){
 		List<String> respBody = new ArrayList<>();
 		validator.validate(eto, result);
 		if(!result.hasErrors()) {
-			service.saveEmployee(eto);
+			respBody.add(service.saveEmployee(eto));
 		} else {
 			List<FieldError> errors = result.getFieldErrors();
 			for (FieldError error : errors) {
 				respBody.add(ErrorCode.ERR002.getErrorCode()+EMPConstant.HYPHEN+ error.getCode());
 			}
 		}
-		return respBody;
-		
+		return respBody;		
 	}
 }
