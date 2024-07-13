@@ -28,6 +28,8 @@ public class EMPServiceImpl implements EMPService {
 		if (!ObjectUtils.isEmpty(oldEmp)) {
 			copyNonNullProperties(eto, oldEmp);
 			oldEmp.setDob(getDateFromString(eto.getDob()));
+			AddressEntity addressEntity = oldEmp.getAddress();
+			copyNonNullProperties(eto.getAddress(), addressEntity);
 			EmployeeEntity updatedEmployee = empRepository.save(oldEmp);
 			return updatedEmployee.getName() + "'s Data Updated.. ";
 		} else {
