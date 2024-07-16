@@ -27,7 +27,7 @@ pipeline {
             steps {
               bat "\"%SCANNER_HOME%\\bin\\sonar-scanner\"" +
                     " -Dsonar.url=http://localhost:9000/" +
-                    " -Dsonar.login=squ_77e698f98330d57150201cb7f0ba40125adb03e0" +
+                    " -Dsonar.login=squ_ba7f0697a9838f95500c641deef422ef8aa7fec4" +
                     " -Dsonar.projectName=emp-demo" +
                     " -Dsonar.java.binaries=." +
                     " -Dsonar.projectKey=emp-demo"
