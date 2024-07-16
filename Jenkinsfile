@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-              git changelog: false, git credentialsId: 'e74c9eb4-71e4-44de-ba68-baefbeb44d7e', poll: false, url: 'https://github.com/tamitkumar/emp-demo.git'
+              git changelog: false, credentialsId: 'e74c9eb4-71e4-44de-ba68-baefbeb44d7e', poll: false, url: 'https://github.com/tamitkumar/emp-demo.git'
             }
         }
         
