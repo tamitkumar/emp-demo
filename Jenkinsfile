@@ -26,7 +26,7 @@ pipeline {
         stage('Sonar Quebe Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
-                    bat "%SCANNER_HOME%\\bin\\sonar-scanner\ -Dsonar.projectName=emp-demo -Dsonar.projectKey=emp-demo"
+                    bat "%SCANNER_HOME%\bin\sonar-scanner -Dsonar.projectName=emp-demo -Dsonar.projectKey=emp-demo"
                 }
               // bat "\"%SCANNER_HOME%\\bin\\sonar-scanner\"" +
               //       " -Dsonar.url=https://sonar.techbrainthinkinsight.com/" +
