@@ -25,12 +25,15 @@ pipeline {
         
         stage('Sonar Quebe Analysis') {
             steps {
-              bat "\"%SCANNER_HOME%\\bin\\sonar-scanner\"" +
-                    " -Dsonar.url=http://localhost:9000/" +
-                    " -Dsonar.login=squ_ba7f0697a9838f95500c641deef422ef8aa7fec4" +
-                    " -Dsonar.projectName=emp-demo" +
-                    " -Dsonar.java.binaries=." +
-                    " -Dsonar.projectKey=emp-demo"
+                withSonarQubeEnv('sonar') {
+                    bat "%SCANNER_HOME%\\bin\\sonar-scanner\ -Dsonar.projectName=emp-demo -Dsonar.projectKey=emp-demo"
+                }
+              // bat "\"%SCANNER_HOME%\\bin\\sonar-scanner\"" +
+              //       " -Dsonar.url=https://sonar.techbrainthinkinsight.com/" +
+              //       " -Dsonar.login=squ_ba7f0697a9838f95500c641deef422ef8aa7fec4" +
+              //       " -Dsonar.projectName=emp-demo" +
+              //       " -Dsonar.java.binaries=." +
+              //       " -Dsonar.projectKey=emp-demo"
             }
         }
         
