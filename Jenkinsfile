@@ -28,6 +28,7 @@ pipeline {
                 withSonarQubeEnv('sonar') {
                     bat "\"%SCANNER_HOME%\\bin\\sonar-scanner\"" +
                         " -Dsonar.projectName=emp-demo" +  
+                        " -Dsonar.java.binaries=." +
                         " -Dsonar.projectKey=emp-demo"
                 }
               // bat "\"%SCANNER_HOME%\\bin\\sonar-scanner\"" +
